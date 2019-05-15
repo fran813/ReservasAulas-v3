@@ -16,7 +16,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 
 public class Aulas {
 	
-	private static final String NOMBRE_FICHERO_AULAS = "ficheros/clientes.dat";
+	private static final String NOMBRE_FICHERO_AULAS = "ficheros/aulas.dat";
 	private List<Aula>coleccionAulas;
 	
 	public Aulas() {
