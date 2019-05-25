@@ -104,8 +104,8 @@ public class Profesores {
 	}
 	
 	public void leer() {
-		File ficheroAulas = new File(NOMBRE_FICHERO_PROFESORES);
-		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ficheroAulas))) {
+		File fichero = new File(NOMBRE_FICHERO_PROFESORES);
+		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(fichero))) {
 			Profesor profesor = null;
 			do {
 				profesor = (Profesor) entrada.readObject();
@@ -125,8 +125,8 @@ public class Profesores {
 	}
 	
 	public void escribir() {
-		File ficheroAulas = new File(NOMBRE_FICHERO_PROFESORES);
-		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ficheroAulas))){
+		File fichero = new File(NOMBRE_FICHERO_PROFESORES);
+		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(fichero))){
 			for (Profesor profesor : coleccionProfesores)
 				salida.writeObject(profesor);
 			System.out.println("Fichero profesores escrito satisfactoriamente.");
