@@ -23,7 +23,7 @@ public class Reservas {
 
 	private List<Reserva> coleccionReservas;
 	private static final float MAX_PUNTOS_PROFESOR_MES = 200f;
-	private static final String NOMBRE_FICHERO_RESERVAS = "fichero/reservas.dat";
+	private static final String NOMBRE_FICHERO_RESERVAS = "ficheros" + File.separator + "reservas.dat";
 
 	public Reservas() {
 
@@ -230,11 +230,11 @@ public class Reservas {
 				insertar(reserva);
 			} while (reserva != null);
 		} catch (ClassNotFoundException e) {
-			System.out.println("No puedo encontrar la clase que tengo que leer.");
+			System.out.println("No puedo encontrar la reserva que tengo que leer.");
 		} catch (FileNotFoundException e) {
-			System.out.println("No puedo abrir el fihero de clientes.");
+			System.out.println("No puedo abrir el fichero de reservas.");
 		} catch (EOFException e) {
-			System.out.println("Fichero clientes leído satisfactoriamente.");
+			System.out.println("Fichero reservas leído satisfactoriamente.");
 		} catch (IOException e) {
 			System.out.println("Error inesperado de Entrada/Salida.");
 		} catch (OperationNotSupportedException e) {
@@ -247,9 +247,9 @@ public class Reservas {
 		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(fichero))){
 			for (Reserva reserva : coleccionReservas)
 				salida.writeObject(reserva);
-			System.out.println("Fichero clientes escrito satisfactoriamente.");
+			System.out.println("Fichero reservas escrito satisfactoriamente.");
 		} catch (FileNotFoundException e) {
-			System.out.println("No puedo crear el fichero de clientes");
+			System.out.println("No puedo crear el fichero de reservas");
 		} catch (IOException e) {
 			System.out.println("Error inesperado de Entrada/Salida");
 		}

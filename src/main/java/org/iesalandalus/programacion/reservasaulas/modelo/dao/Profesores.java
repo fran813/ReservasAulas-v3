@@ -16,7 +16,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 
 public class Profesores {
 
-	private static final String NOMBRE_FICHERO_PROFESORES = "ficheros/profesores.dat";
+	private static final String NOMBRE_FICHERO_PROFESORES = "ficheros" + File.separator + "profesores.dat";
 	
 	private List<Profesor> coleccionProfesores;
 
@@ -114,7 +114,7 @@ public class Profesores {
 		} catch (ClassNotFoundException e) {
 			System.out.println("No puedo encontrar el profesor que tengo que leer.");
 		} catch (FileNotFoundException e) {
-			System.out.println("No puedo abrir el fihero de profesores.");
+			System.out.println("No puedo abrir el fichero de profesores.");
 		} catch (EOFException e) {
 			System.out.println("Fichero profesores leído satisfactoriamente.");
 		} catch (IOException e) {

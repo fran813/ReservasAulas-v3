@@ -16,7 +16,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 
 public class Aulas {
 	
-	private static final String NOMBRE_FICHERO_AULAS = "ficheros/aulas.dat";
+	private static final String NOMBRE_FICHERO_AULAS = "ficheros" + File.separator + "aulas.dat";
 	private List<Aula>coleccionAulas;
 	
 	public Aulas() {
@@ -112,9 +112,9 @@ public class Aulas {
 				insertar(aula);
 			} while (aula != null);
 		} catch (ClassNotFoundException e) {
-			System.out.println("No puedo encontrar la clase que tengo que leer.");
+			System.out.println("No puedo encontrar el aula que tengo que leer.");
 		} catch (FileNotFoundException e) {
-			System.out.println("No puedo abrir el fihero de aulas.");
+			System.out.println("No puedo abrir el fichero de aulas.");
 		} catch (EOFException e) {
 			System.out.println("Fichero aulas leído satisfactoriamente.");
 		} catch (IOException e) {
