@@ -35,7 +35,7 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 
 	@Override
 	public void salir() {
-		System.out.println("Hasta Prontooo!!!");
+		controlador.salir();
 	}
 
 	@Override
